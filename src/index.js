@@ -29,10 +29,17 @@ function onSearch(evt) {
       }
       createResult(nameCountrie);
     })
+
     .catch(err => {
+      // if (err.massage === '404') {
       Notify.failure('Oops, there is no country with that name', {
         position: 'center-top',
       });
+      // }
+      countryList.innerHTML = '';
+      countryInfo.innerHTML = '';
+      searchCountries.value = '';
+      console.error(err);
     });
 }
 
@@ -41,7 +48,7 @@ function createResult(nameCountrie) {
 
   if (nameCountrie.length === 1) {
     createCountryInfo(nameCountrie);
-  } else if (nameCountrie.length) {
+  } else if (nameCountrie.length >= 2 && nameCountrie.length <= 10) {
     createCountryList(nameCountrie);
   }
 }
