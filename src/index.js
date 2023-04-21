@@ -50,8 +50,8 @@ function createCountryList(nameCountrie) {
   countryInfo.innerHTML = '';
   const catalogCountry = nameCountrie
     .map(
-      ({ name: { official }, flags: { svg, alt } }) => `<li>
-      <img src="${svg}" alt="${alt}" width="50px">
+      ({ name: { official }, flags: { svg, alt } }) => `<li class="list-text">
+      <img src="${svg}" alt="${alt}" width="30px">
       <p><b>${official}</b></p>
   </li>`
     )
@@ -71,13 +71,13 @@ function createCountryInfo(nameCountrie) {
         population,
         capital,
         languages,
-      }) => `<li>
-      <img src="${svg}" alt="${alt}" width="50px">
-      <h2><b>${official}</b></h2>
+      }) => `
+      <li><img src="${svg}" alt="${alt}" width="50px">
+      <h2><b>${official}</b></h2></li>
       <p class="card-text"><b>Capital:</b> ${capital}</p>
       <p class="card-text"><b>Population:</b> ${population}</p>
-      <p class="card-text"><b>Languages:</b> ${languages}</p>
-  </li>`
+      <p class="card-text"><b>Languages:</b> ${Object.values(languages)}</p>
+  `
     )
     .join('');
   countryInfo.innerHTML = cardMarkup;
