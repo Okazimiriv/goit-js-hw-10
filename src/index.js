@@ -36,10 +36,8 @@ function onSearch(evt) {
         position: 'center-top',
       });
       // }
-      countryList.innerHTML = '';
-      countryInfo.innerHTML = '';
-      searchCountries.value = '';
       console.error(err);
+      clearResult();
     });
 }
 
@@ -89,4 +87,10 @@ function createCountryInfo(nameCountrie) {
     .join('');
   countryInfo.innerHTML = cardMarkup;
   return nameCountrie;
+}
+
+function clearResult() {
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
+  searchCountries.value = '';
 }
