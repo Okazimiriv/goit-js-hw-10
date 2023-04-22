@@ -31,11 +31,11 @@ function onSearch(evt) {
     })
 
     .catch(err => {
-      // if (err.message === '404') {
-      Notify.failure('Oops, there is no country with that name', {
-        position: 'center-top',
-      });
-      // }
+      if (err.message === '404') {
+        Notify.failure('Oops, there is no country with that name', {
+          position: 'center-top',
+        });
+      }
       console.error(err);
       clearResult();
     });
