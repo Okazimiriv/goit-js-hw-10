@@ -31,7 +31,7 @@ function onSearch(evt) {
     })
 
     .catch(err => {
-      // if (err.massage === '404') {
+      // if (err.message === '404') {
       Notify.failure('Oops, there is no country with that name', {
         position: 'center-top',
       });
