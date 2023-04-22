@@ -26,6 +26,7 @@ function onSearch(evt) {
           'Too many matches found. Please, enter a more specific name.',
           { position: 'center-top' }
         );
+        countryList.innerHTML = '';
       }
       createResult(nameCountrie);
     })
